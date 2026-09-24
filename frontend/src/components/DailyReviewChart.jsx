@@ -1,3 +1,4 @@
+import API_URL from "../api";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import {
@@ -15,7 +16,7 @@ function DailyReviewChart() {
 
   useEffect(() => {
     axios
-      .get("http://127.0.0.1:8000/api/daily_review_volume/")
+      axios.get(`${API_URL}/api/daily_review_volume/`)
       .then((response) => {
         setData(response.data);
       })

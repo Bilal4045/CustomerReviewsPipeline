@@ -1,3 +1,4 @@
+import API_URL from "../api";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
@@ -6,7 +7,7 @@ function WorstProducts() {
 
   useEffect(() => {
     axios
-      .get("http://127.0.0.1:8000/api/worst_products/")
+      .get(`${API_URL}/api/worst_products/`)
       .then((response) => {
         setData(response.data);
       })
